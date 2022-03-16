@@ -1,0 +1,35 @@
+
+<!-- <p>shop works!</p> -->
+<br/>
+<div>
+    Current User = {{state.user.currentUser}}
+</div>
+<br/>
+
+<!-- {{ getName() }} -->
+<!-- <p>{{state| json}}</p> -->
+
+<div *ngFor="let table of state.data | keyvalue:unsorted " >
+    {{table.key}}
+    <br/>
+    <div *ngFor="let row of table.value; index as myRowIndex">
+
+        <div *ngIf="myRowIndex != 0" class="tablecol" >                 
+            <div *ngFor="let col of row | keyvalue:unsorted">
+                <input class="inputfield"  type="text" value={{col.value}} />
+            </div>
+            <button (click)="onClickButtonDeleteRow($event, table, myRowIndex)">-</button>
+        </div>
+
+        <div *ngIf="myRowIndex == 0" class="tablecol">                 
+            <div class="myHeader"   *ngFor="let col of row | keyvalue:unsorted">
+                <input class="myHeaderInput"   type="text" value={{col.key}} />
+            </div>
+            
+        </div>
+          
+    </div>
+    <button (click)="onClickButtonAddRow($event, table)">+</button>      
+    <br/>
+    <br/>
+</div>

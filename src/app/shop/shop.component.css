@@ -1,0 +1,19 @@
+.tablecol {
+  display: flex;
+}
+
+.inputfield {
+  margin-right: 5px;
+  padding-right: 5px;
+  width: 180px;
+}
+
+.myHeader {
+  width: 196px;
+}
+
+.myHeaderInput {
+  /* background-color: yellow; */
+  border-color: white;
+  border: none;
+}
